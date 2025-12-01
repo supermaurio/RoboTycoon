@@ -1,0 +1,50 @@
+# Root Widget
+MyScreenManager:
+
+<MyScreenManager>:
+    HomeScreen:
+    SettingsScreen:
+    FactoryScreen:
+
+<HomeScreen>:
+    name: "home"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "This is the Home Screen"
+        Label:
+            text: "HALLO"
+        Button:
+            text: "Go to Settings"
+            on_release:
+                app.root.current = "settings"
+
+<SettingsScreen>:
+    name: "settings"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "This is the Settings Screen"
+        Button:
+            text: "Back to Home"
+            on_release:
+                app.root.current = "home"
+        Button:
+            text: "Go to Factory"
+            on_release:
+                app.root.current = "factory"
+
+<FactoryScreen>:
+    name: "factory"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "This is the Factory Screen"
+        Button:
+            text: "Back to Home"
+            on_release:
+                app.root.current = "home"
+        Button:
+            text: "Go to settings"
+            on_release:
+                app.root.current = "settings"
